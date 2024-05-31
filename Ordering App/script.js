@@ -61,20 +61,20 @@ function renderMenu(menu) {
                     totalPrice += item.price;
                     updateTotalPrice();
                 });
-            }
-        }
-    });
-}
+               }
+             }
+           });
+          }
 
-            function updateTotalPrice() {
-                let totalPriceElement = document.getElementById('totals-container');
-                    if (!totalPriceElement) {
-                    totalPriceElement = document.createElement('div');
-                    totalPriceElement.id = 'totals-container';
-                    document.getElementById('order-section').appendChild(totalPriceElement);
-                    } else {
-                    document.getElementById('order-section').appendChild(totalPriceElement);
-                   }
+        function updateTotalPrice() {
+           let totalPriceElement = document.getElementById('totals-container');
+             if (!totalPriceElement) {
+                totalPriceElement = document.createElement('div');
+                totalPriceElement.id = 'totals-container';
+                document.getElementById('order-section').appendChild(totalPriceElement);
+                } else {
+                document.getElementById('order-section').appendChild(totalPriceElement);
+                }
 
             totalPriceElement.innerHTML = `
               <div class="drinks-container">
@@ -89,13 +89,13 @@ function renderMenu(menu) {
             const orderBtn = document.getElementById('order-btn');
             orderBtn.addEventListener('click', () => {
             document.getElementById('modal').style.display = 'block';
-        });
-       }
+         });
+        }
 
         const closeModalBtn = document.getElementById('modal-close-btn');
             closeModalBtn.addEventListener('click', () => {
               document.getElementById('modal').style.display = 'none';
-    });
+        });
 
         const payButton = document.querySelector('.modal-btn button');
         payButton.addEventListener('click', (e) => {
@@ -111,12 +111,12 @@ function renderMenu(menu) {
         if (!fullName || !cardNumber || !cvv) {
             alert('Please enter your name, card number, and CVV.');
         return;
-    }
+       }
 
           document.getElementById('modal').style.display = 'none';
 
           const orderSection = document.getElementById('order-section');
           orderSection.innerHTML = `<h2 class="message">Thanks ${fullName}, your order will be out momentarily!</h2>`;
-    });
+        });
 
         renderMenu(menuArray);
